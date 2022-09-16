@@ -23,7 +23,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if body != None:
-        response = "\nTitle Here"
+        response = "\n\nTitle Here"
         response += "\n1. Option 1"
         response += "\n2. Option 2"
         response += "\n3. Option 3"

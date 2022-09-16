@@ -18,7 +18,7 @@ def incoming_sms():
 
     # Determine the right reply for this message
     if body != None:
-        response = "\nTechie"
+        response = "\nTechieBot"
         response += "\nCentral Hub for teaching tech literacy.\nWhat do you need help with?"
         response += "\n1. Setting Up Accounts"
         response += "\n2. Password Management"
@@ -26,9 +26,11 @@ def incoming_sms():
         response += "\n4. Verifying Emails"
         response += "\n5. Downloading an App"
         response += "\n6. Creating a Reminder"
+        response += "\n Please type in the number that corresponds with the option you need help with."
         resp.message(response)
     else:
-        resp.message("\nI didnt get that.")
+        resp.message("\nI didn't get that.")
+    
 
     return str(resp)
 

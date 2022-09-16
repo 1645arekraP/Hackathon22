@@ -2,17 +2,33 @@
 import os
 from twilio.rest import Client
 from info import account_sid, auth_token
+from flask import Flask
+from flask import request
+from twilio.twiml.messaging_response import MessagingResponse
 
+app = Flask(__name__)
 
-# Find your Account SID and Auth Token at twilio.com/console
-# and set the environment variables. See http://twil.io/secure
-client = Client(account_sid, auth_token)
+headers = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36'
 
-message = client.messages \
-                .create(
-                     body="Join Earth's mightiest heroes. Like Kevin Bacon.",
-                     from_='+17573491472',
-                     to='+17703127914'
-                 )
+}
 
-print(message.sid)
+@app.route("/sms", methods=['GET', 'POST'])
+def incoming_sms():
+    """Send a dynamic reply to an incoming text message"""
+    # Get the message the user sent our Twilio number
+    body = request.values.get('Body', None)
+
+    # Start our TwiML response
+    resp = MessagingResponse()
+
+    # Determine the right reply for this message
+    if body == 'hello':
+        resp.message("Hi!")
+    elif body == 'bye':
+        resp.message("Goodbye")
+
+    return str(resp)
+
+if __name__ == "__main__":
+    app.run(debug=True)

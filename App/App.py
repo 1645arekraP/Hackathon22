@@ -1,4 +1,3 @@
-# Download the helper library from https://www.twilio.com/docs/python/install
 import os
 from twilio.rest import Client
 from info import account_sid, auth_token
@@ -23,10 +22,14 @@ def incoming_sms():
     resp = MessagingResponse()
 
     # Determine the right reply for this message
-    if body == 'hello':
-        resp.message("Hi!")
-    elif body == 'bye':
-        resp.message("Goodbye")
+    if body != None:
+        response = "\nTitle Here"
+        response += "\n1. Option 1"
+        response += "\n2. Option 2"
+        response += "\n3. Option 3"
+        resp.message(response)
+    else:
+        resp.message("\nI didnt get that.")
 
     return str(resp)
 

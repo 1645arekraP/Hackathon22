@@ -16,7 +16,7 @@ def incoming_sms():
     # Start our TwiML response
     resp = MessagingResponse()
 
-    # Determine the right reply for this message
+    # Promting the menue, and responding based off the text message
     if body != None:
         response = "\nTechie"
         response += "\nCentral Hub for teaching tech literacy.\nWhat do you need help with?"

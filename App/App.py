@@ -19,7 +19,7 @@ def incoming_sms():
     # Determine the right reply for this message
     if body != None:
         response = "\nTechie"
-        response += "\nCentral Hub for teching tech literacy.\nWhat do you need help with?"
+        response += "\nCentral Hub for teaching tech literacy.\nWhat do you need help with?"
         response += "\n1. Setting Up Accounts"
         response += "\n2. Password Management"
         response += "\n3. Managing your Storage"

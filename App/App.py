@@ -17,18 +17,8 @@ def incoming_sms():
     flag = False
 
     # Promting the menue, and responding based off the text message
-    if body != None:
-        response = "\n "
-        response = "\nTechieBot\n"
-        response += "\nTechieBot - Tech Literacy\n"
-        response += "\n1. Setting Up Accounts"
-        response += "\n2. Password Management"
-        response += "\n3. Managing your Storage"
-        response += "\n4. Verifying Emails"
-        response += "\n5. Downloading an App"
-        response += "\n6. Creating a Reminder"
-        response += "\n\nPlease type in the number that corresponds with the option you need help with."
-        resp.message(response)
+    
+    # option 1
     if body == '1':
         response = "TechieBot\n"
         response += "You chose: Setting Up Accounts\n"
@@ -37,12 +27,47 @@ def incoming_sms():
         response += "\nEnter in your email, and create a password. If you need help with emails send a text with the number 4. Or if you need help with passwords, send the number 2.\n"
         response += "\n3. Answer the following questions. Some common questions include birthdates, usernames, and asking if you would like to receive promo emails. If you don't want to get promo emails, unchek this box.\n"
         response += "\n4. Enjoy your new account!\n"
+        resp.message(response)
+
+    if body == '2':
+        response = "TechieBot\n"
+        response += "You chose: Password Managemenet\n"
+        response += "\n2a. Resetting a password.\n"
+        response += "\n2b. Password Safety.\n"
+        resp.message(response)
+    if body == '2a':
+        response = "1. Visit the webpage you are trying to log in on, and under login click on reset password.\n"
+        response += "2. If you're prompted to enter an email, enter the email you've used to register the account.\n"
+        response += "3. Continue until you've reached a point where you'll be sent an email.\n"
+        response += "4. Check your email, and enter your password.\n"
+        resp.message(response)
+    if body == '2a':
+        response = "- Never use the same passwords for fincancial accounts.\n"
+        response += "- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
+        response += "Don't give passwords out online, and dont keep them in text documents,a good password is a random combination of three words.\n"
+        resp.message(response)
+    if body == '4':
+        response = "TechieBot\n"
+        response += "You chose: Verifying Emails\n"
+        response += "1. To verify emails, open your email app, and enter the code into what is asking you to verify.\n"
+        response += "- Be careful! If you weren't promped that a verification code is being sent, don't enter it!\n"
+        response += "- To write an email, click the box titled Compose, and enter the email adress you're trying to send to. Then enter a subject and the content of your email. To attach pictures click on the paper clip in the bottom of the email box, and chose a file to upload.\n"
+
+        resp.message(response)
+
+    elif body != None:
+        response = "\nTechieBot\n"
+        response += "\nTechieBot - Tech Literacy\n"
+        response += "\n1. Setting Up Accounts"
+        response += "\n2. Password Management"
+        response += "\n3. Managing your Storage"
+        response += "\n4. Verifying Emails"
+        response += "\n5. Downloading an App"
+        response += "\n\nPlease type in the number that corresponds with the option you need help with."
         resp.message(response)    
-    else:
-        resp.message("\nI didn't get that.")
     
 
     return str(resp)
-    
+
 if __name__ == "__main__":
     app.run(debug=True)

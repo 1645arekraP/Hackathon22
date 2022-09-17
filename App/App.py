@@ -46,6 +46,15 @@ def incoming_sms():
         response += "- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
         response += "Don't give passwords out online, and dont keep them in text documents,a good password is a random combination of three words.\n"
         resp.message(response)
+    elif body == '3':
+        response = ""
+        response += "\nYou chose: Managing Your Storage"
+        response += "\nHere are a few tips:"
+        response += "\nTry to delete apps that you generally do not use"
+        response += "\nIf you know how to download apps, download apps like \"Google Drive\" or \"Google Photos\" from the App Store, otherwise press 5. After downloading the apps, try to upload your images, videos, and other media to the app, and delete the unnecessary items. This is wil ensure better storage, by storing your images and videos on the downloaded app, while removing excess items and opening up more storage."
+        response += "\nClear and Delete out old emails and text messages, by opening the app and finding a \"trash can\" symbol. "
+        response += "\nTurn off the autodownload feature on apps like \" WhatsApp \" by accessing settings on the app, to ensure your storage is not overflowed with auto-downloaded images and videos"
+        resp.message(response)
     if body == '4':
         response = "TechieBot\n"
         response += "You chose: Verifying Emails\n"
@@ -54,6 +63,17 @@ def incoming_sms():
         response += "- To write an email, click the box titled Compose, and enter the email adress you're trying to send to. Then enter a subject and the content of your email. To attach pictures click on the paper clip in the bottom of the email box, and chose a file to upload.\n"
 
         resp.message(response)
+    elif body == '5':
+        response = ""
+        response += "\nYou chose: Downloading an App"
+        response += "\nHere are the steps requried to download an app."
+        response += "\n If you are using an iPhone, look for the \" App Store\", and If you are using an Andorid phone, look for the \"Play Store\""
+        response += "\nAfter finding the app, open the app and press the search icon, which looks like a magnifying glass"
+        response += "\nThen type in the app's name in the search engine."
+        response += "\nLastly, fter you find the app you were looking, ensure your device has enough storage to download the app, and also ensure that the app is compatible with your device and is trustful."
+        response += "Finally, hit the download button, and wait until the process is complete"
+        resp.message(response)
+
 
     elif body != None:
         response = "\nTechieBot\n"

@@ -24,7 +24,7 @@ def getPassword ():
   symbols = string.punctuation
   num = string.digits
   lower = string.ascii_lowercase
-  upper = string.ascci_uppercase
+  upper = string.ascii_uppercase
   all = symbols + num + lower + upper
   index = random.sample(all, length)
   password = "".join(index)

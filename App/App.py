@@ -16,7 +16,7 @@ def printPasswords():
   for x in range(len(passwordList)):
     passwords += x + ". " + passwordList[x]
     passwords += "\n"
-    return passwords
+  return passwords
 
 def getPassword ():
 

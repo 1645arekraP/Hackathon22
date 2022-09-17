@@ -76,6 +76,7 @@ def incoming_sms():
         a=getPassword()
         response += "\n"+ a
         passwordList.append(a)
+        response += "\nIn case you forget your password, we have also stored it for future use, and you can always ask us for it. :)"
         resp.message(response)
     elif body== '2d':
         response = ""

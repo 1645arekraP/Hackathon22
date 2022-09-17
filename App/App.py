@@ -9,7 +9,16 @@ from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
 
-def getPassword (self, a):
+passwordList = []
+
+def printPasswords():
+  passwords = "\n"
+  for x in range(len(passwordList)):
+    passwords += x + ". " + passwordList[x]
+    password += "\n"
+    return password
+
+def getPassword ():
 
   length = random.randint(8, 12)
   symbols = string.punctuation
@@ -48,6 +57,8 @@ def incoming_sms():
         response += "You chose: Password Managemenet\n"
         response += "\n2a. Resetting a password.\n"
         response += "\n2b. Password Safety.\n"
+        response += "\n2c. Generate Random Password"
+        response += "\n2d. What are my passwords?"
         resp.message(response)
     if body == '2a':
         response = "1. Visit the webpage you are trying to log in on, and under login click on reset password.\n"
@@ -60,7 +71,18 @@ def incoming_sms():
         response += "- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
         response += "Don't give passwords out online, and dont keep them in text documents,a good password is a random combination of three words.\n"
         resp.message(response)
-    elif body == '3':
+    if body == '2c':
+        response = ""
+        response += "\n Here is a random passwored we created for you: "
+        a=getPassword()
+        response += "\n"+ a
+        passwordList.append(a)
+        resp.message(response)
+    if body== '2d':
+        response=""
+        response+=printPasswords()
+        resp.message(response)
+    if body == '3':
         response = ""
         response += "\nYou chose: Managing Your Storage"
         response += "\nHere are a few tips:"
@@ -77,7 +99,7 @@ def incoming_sms():
         response += "- To write an email, click the box titled Compose, and enter the email adress you're trying to send to. Then enter a subject and the content of your email. To attach pictures click on the paper clip in the bottom of the email box, and chose a file to upload.\n"
 
         resp.message(response)
-    elif body == '5':
+    if body == '5':
         response = ""
         response += "\nYou chose: Downloading an App"
         response += "\nHere are the steps requried to download an app."

@@ -1,4 +1,6 @@
 import os
+import random
+import string
 from twilio.rest import Client
 from info import account_sid, auth_token
 from flask import Flask
@@ -6,6 +8,18 @@ from flask import request
 from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__)
+
+def getPassword (self, a):
+
+  length = random.randint(8, 12)
+  symbols = string.punctuation
+  num = string.digits
+  lower = string.ascii_lowercase
+  upper = string.ascci.uppercase
+  all = symbols + num + lower + upper
+  index = random.sample(all, length)
+  password = "".join(index)
+  return password
 
 @app.route("/sms", methods=['GET', 'POST'])
 def incoming_sms():
@@ -41,7 +55,7 @@ def incoming_sms():
         response += "3. Continue until you've reached a point where you'll be sent an email.\n"
         response += "4. Check your email, and enter your password.\n"
         resp.message(response)
-    if body == '2a':
+    if body == '2b':
         response = "- Never use the same passwords for fincancial accounts.\n"
         response += "- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
         response += "Don't give passwords out online, and dont keep them in text documents,a good password is a random combination of three words.\n"

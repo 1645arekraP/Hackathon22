@@ -16,3 +16,9 @@
 -The Flask environment also gave us lots of issues as many of the post and get requests were not throwing errors. 
 -To fix this we used a NGROK to tunnel requests from Flask. The app also handles choices as case sensitive strings, a better way to approach this would have been iterating over each character in the string. 
 -Something we wanted to do was also increase the user input, so we also hope to increase more of the user feedback or response, where they are able to ask us more questions and we can answer with more choices. 
+
+# To Do list:
+- fix print method (done)
+- setup NGROK (High priority)
+- fix menu being double printed (High priority)(done)
+- check for typos

@@ -97,7 +97,7 @@ def incoming_sms():
         response += "1. To verify emails, open your email app, and enter the code into what is asking you to verify.\n"
         response += "- Be careful! If you weren't promped that a verification code is being sent, don't enter it!\n"
         response += "- To write an email, click the box titled Compose, and enter the email adress you're trying to send to. Then enter a subject and the content of your email. To attach pictures click on the paper clip in the bottom of the email box, and chose a file to upload.\n"
-        resp.message(response)g
+        resp.message(response)
     elif body == '5':
         response = ""
         response += "\nYou chose: Downloading an App"

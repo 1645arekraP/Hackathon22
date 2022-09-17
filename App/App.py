@@ -51,39 +51,38 @@ def incoming_sms():
         response += "\n3. Answer the following questions. Some common questions include birthdates, usernames, and asking if you would like to receive promo emails. If you don't want to get promo emails, unchek this box.\n"
         response += "\n4. Enjoy your new account!\n"
         resp.message(response)
-
-    if body == '2':
+    elif body == '2':
         response = "TechieBot\n"
         response += "You chose: Password Managemenet\n"
         response += "\n2a. Resetting a password.\n"
         response += "\n2b. Password Safety.\n"
-        response += "\n2c. Generate Random Password"
-        response += "\n2d. What are my passwords?"
+        response += "\n2c. Generate Random Password\n"
+        response += "\n2d. What are my passwords?\n"
         resp.message(response)
-    if body == '2a':
+    elif body == '2a':
         response = "1. Visit the webpage you are trying to log in on, and under login click on reset password.\n"
         response += "2. If you're prompted to enter an email, enter the email you've used to register the account.\n"
         response += "3. Continue until you've reached a point where you'll be sent an email.\n"
         response += "4. Check your email, and enter your password.\n"
         resp.message(response)
-    if body == '2b':
+    elif body == '2b':
         response = "- Never use the same passwords for fincancial accounts.\n"
         response += "- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
         response += "Don't give passwords out online, and dont keep them in text documents,a good password is a random combination of three words.\n"
         resp.message(response)
-    if body == '2c':
+    elif body == '2c':
         response = ""
         response += "\n Here is a random passwored we created for you: "
         a=getPassword()
         response += "\n"+ a
         passwordList.append(a)
         resp.message(response)
-    if body== '2d':
+    elif body== '2d':
         response = ""
         response += "\n"
         response += printPasswords()
         resp.message(response)
-    if body == '3':
+    elif body == '3':
         response = ""
         response += "\nYou chose: Managing Your Storage"
         response += "\nHere are a few tips:"
@@ -92,15 +91,14 @@ def incoming_sms():
         response += "\nClear and Delete out old emails and text messages, by opening the app and finding a \"trash can\" symbol. "
         response += "\nTurn off the autodownload feature on apps like \" WhatsApp \" by accessing settings on the app, to ensure your storage is not overflowed with auto-downloaded images and videos"
         resp.message(response)
-    if body == '4':
+    elif body == '4':
         response = "TechieBot\n"
         response += "You chose: Verifying Emails\n"
         response += "1. To verify emails, open your email app, and enter the code into what is asking you to verify.\n"
         response += "- Be careful! If you weren't promped that a verification code is being sent, don't enter it!\n"
         response += "- To write an email, click the box titled Compose, and enter the email adress you're trying to send to. Then enter a subject and the content of your email. To attach pictures click on the paper clip in the bottom of the email box, and chose a file to upload.\n"
-
-        resp.message(response)
-    if body == '5':
+        resp.message(response)g
+    elif body == '5':
         response = ""
         response += "\nYou chose: Downloading an App"
         response += "\nHere are the steps requried to download an app."
@@ -110,8 +108,6 @@ def incoming_sms():
         response += "\nLastly, fter you find the app you were looking, ensure your device has enough storage to download the app, and also ensure that the app is compatible with your device and is trustful."
         response += "Finally, hit the download button, and wait until the process is complete"
         resp.message(response)
-
-
     elif body != None:
         response = "\nTechieBot\n"
         response += "\nTechieBot - Tech Literacy\n"

@@ -24,7 +24,7 @@ def getPassword ():
   symbols = string.punctuation
   num = string.digits
   lower = string.ascii_lowercase
-  upper = string.ascci.uppercase
+  upper = string.ascci_uppercase
   all = symbols + num + lower + upper
   index = random.sample(all, length)
   password = "".join(index)
@@ -66,13 +66,13 @@ def incoming_sms():
         response += "4. Check your email, and enter your password.\n"
         resp.message(response)
     elif body == '2b':
-        response = "- Never use the same passwords for fincancial accounts.\n"
-        response += "- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
+        response = "\n- Never use the same passwords for fincancial accounts.\n"
+        response += "\n- If you receive a email asking to reset your password, when you havent gone through the steps yourself, do not reset it through said email! Go to the official webpage, and reset your password from there, this is a common scam called Phishing!\n"
         response += "Don't give passwords out online, and dont keep them in text documents,a good password is a random combination of three words.\n"
         resp.message(response)
     elif body == '2c':
         response = ""
-        response += "\n Here is a random passwored we created for you: "
+        response += "\n Here is a random password we created for you: "
         a=getPassword()
         response += "\n"+ a
         passwordList.append(a)

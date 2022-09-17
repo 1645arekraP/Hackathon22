@@ -1,5 +1,7 @@
 # Hackathon22
-# What it does - A SMS bot sends a menu whenever a user texts the bot. This menu includes basic digital literacy skills that some people might not have when using technology.
+# What it does 
+-A SMS bot sends a menu whenever a user texts the bot. 
+-This menu includes basic digital literacy skills that some people might not have when using technology.
 # How we built it 
 -We used the Twilio API to send and receive text messages. 
 -The Twilio API gets the text from the user and if the body of the SMS text is not a valid choice on the menu, the menu is sent back to the user. 

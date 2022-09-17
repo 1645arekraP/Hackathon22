@@ -15,8 +15,8 @@ def printPasswords():
   passwords = "\n"
   for x in range(len(passwordList)):
     passwords += x + ". " + passwordList[x]
-    password += "\n"
-    return password
+    passwords += "\n"
+    return passwords
 
 def getPassword ():
 
@@ -79,8 +79,9 @@ def incoming_sms():
         passwordList.append(a)
         resp.message(response)
     if body== '2d':
-        response=""
-        response+=printPasswords()
+        response = ""
+        response += "\n"
+        response += printPasswords()
         resp.message(response)
     if body == '3':
         response = ""
